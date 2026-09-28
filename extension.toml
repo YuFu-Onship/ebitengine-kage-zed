@@ -12,7 +12,7 @@ snippets = ["snippets/Kage.json"]
 [grammars.kage]
 # The grammar sources live in a separate git repository inside this folder.
 # `zed` checks out `rev` into grammars/kage and compiles it with wasi-sdk.
-repository = "E:/Users/YUFU/Downloads/kage-zed/grammar-src"
+repository = "../kage-zed/grammar-src"
 rev = "main"
 
 [language_servers.kage-lsp]
