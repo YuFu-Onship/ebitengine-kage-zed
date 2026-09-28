@@ -1,0 +1,76 @@
+{
+  "Fragment shader boilerplate": {
+    "prefix": "fragment",
+    "body": [
+      "package main",
+      "",
+      "func Fragment(pos vec4, tex vec2, col vec4) vec4 {",
+      "\t$0",
+      "\treturn vec4(0.5, 0.0, 0.0, 1.0)",
+      "}"
+    ],
+    "description": "The basis for a fragment shader. pos: destination pixel position (xy in 0..N), tex: source texture texel position (xy in 0..1), col: supplemental color from vertices (rgba in 0..1)."
+  },
+  "Vertex shader boilerplate": {
+    "prefix": "vertex",
+    "body": [
+      "package main",
+      "",
+      "var Vertices [6]vec2",
+      "",
+      "func Vertex(pos vec4, tex vec2, col vec4) vec4 {",
+      "\t$0",
+      "\treturn vec4(pos.x, pos.y, 0.0, 1.0)",
+      "}"
+    ],
+    "description": "The basis for a vertex shader with a vertex buffer."
+  },
+  "imageColorNAtPixel helper": {
+    "prefix": "imageColorNAtPixel",
+    "body": [
+      "func imageColor${1:0}AtPixel(pixelCoords vec2) vec4 {",
+      "\tsizeInPixels := imageSrcTextureSize()",
+      "\toffsetInTexels, _ := imageSrcRegionOnTexture()",
+      "\tadjustedTexelCoords := pixelCoords/sizeInPixels + offsetInTexels",
+      "\treturn imageSrc${1:0}At(adjustedTexelCoords)",
+      "}"
+    ],
+    "description": "Helper to read the color of image 0-3 at the given pixel coordinates (xy in 0..N)."
+  },
+  "imageColorNAtUnit helper": {
+    "prefix": "imageColorNAtUnit",
+    "body": [
+      "func imageColor${1:0}AtUnit(unitCoords vec2) vec4 {",
+      "\toffsetInTexels, sizeInTexels := imageSrcRegionOnTexture()",
+      "\tadjustedTexelCoords := unitCoords*sizeInTexels + offsetInTexels",
+      "\treturn imageSrc${1:0}At(adjustedTexelCoords)",
+      "}"
+    ],
+    "description": "Helper to read the color of image 0-3 at the given unit coordinates (xy in 0..1)."
+  },
+  "imageSrcNAt": {
+    "prefix": "imageSrcNAt",
+    "body": ["imageSrc${1:0}At($0)"],
+    "description": "Returns the color value as vec4 at the given position pos in texels of source image 0-3."
+  },
+  "imageSrcNUnsafeAt": {
+    "prefix": "imageSrcNUnsafeAt",
+    "body": ["imageSrc${1:0}UnsafeAt($0)"],
+    "description": "Returns the color value at pos in texels of source image 0-3, but without boundary checks."
+  },
+  "Swizzle rgba": {
+    "prefix": ".rgba",
+    "body": [".rgba$0"],
+    "description": "Read or write multiple vec components at the same time."
+  },
+  "Swizzle xyzw": {
+    "prefix": ".xyzw",
+    "body": [".xyzw$0"],
+    "description": "Read or write multiple vec components at the same time."
+  },
+  "Swizzle stpq": {
+    "prefix": ".stpq",
+    "body": [".stpq$0"],
+    "description": "Read or write multiple vec components at the same time."
+  }
+}

@@ -1,0 +1,18 @@
+package main
+
+// comment
+var threshold float = 0.5
+var table [4]mat2
+
+/* block */
+func Fragment(pos vec4, tex vec2, col vec4) vec4 {
+	col.rgb = mix(col.rgb, 0.5, 0.5)
+	c := imageSrc0At(tex)
+	if c.r > 0.5 {
+		discard()
+	}
+	for i := 0; i < len(table); i++ {
+		c.x += table[i][0]
+	}
+	return vec4(c.x, c.y, c.z, 1.0)
+}

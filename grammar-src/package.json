@@ -1,0 +1,19 @@
+{
+  "name": "tree-sitter-kage",
+  "version": "0.1.0",
+  "description": "Tree-sitter grammar for Kage, the shader language of Ebitengine",
+  "main": "bindings/node",
+  "keywords": [
+    "tree-sitter",
+    "kage",
+    "ebitengine",
+    "shader"
+  ],
+  "license": "MIT",
+  "tree-sitter": [
+    {
+      "scope": "source.kage",
+      "file-types": ["kage"]
+    }
+  ]
+}

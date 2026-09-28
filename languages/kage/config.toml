@@ -1,0 +1,17 @@
+name = "Kage"
+grammar = "kage"
+path_suffixes = ["kage"]
+line_comments = ["// "]
+autoclose_before = ";:.,=}])>"
+brackets = [
+    { start = "{", end = "}", close = true, newline = true },
+    { start = "[", end = "]", close = true, newline = true },
+    { start = "(", end = ")", close = true, newline = true },
+    { start = "\"", end = "\"", close = true, newline = false, not_in = ["comment", "string"] },
+    { start = "'", end = "'", close = true, newline = false, not_in = ["comment", "string"] },
+    { start = "/*", end = " */", close = true, newline = false, not_in = ["comment", "string"] },
+]
+tab_size = 4
+hard_tabs = false
+block_comment = { start = "/*", prefix = "", end = "*/", tab_size = 1 }
+language_servers = ["kage-lsp", "!zls", "!gopls"]

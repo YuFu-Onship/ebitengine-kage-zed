@@ -1,0 +1,19 @@
+id = "kage"
+name = "Kage"
+description = "Kage (Ebitengine shader language) support: syntax highlighting, completions, hover docs and snippets"
+version = "0.1.0"
+schema_version = 1
+authors = ["Yufu"]
+repository = "https://github.com/sedyh/ebitengine-kage-support"
+
+languages = ["languages/kage"]
+snippets = ["snippets/Kage.json"]
+
+[grammars.kage]
+# The grammar sources live in a separate git repository inside this folder.
+# `zed` checks out `rev` into grammars/kage and compiles it with wasi-sdk.
+repository = "E:/Users/YUFU/Downloads/kage-zed/grammar-src"
+rev = "main"
+
+[language_servers.kage-lsp]
+languages = ["Kage"]
