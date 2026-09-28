@@ -1,7 +1,14 @@
 # kage-zed
+<p align="center">
+<img alt="AI" src="https://img.shields.io/badge/Vibe%20Coding-GLM%205.3%20Flash-8A2BE2?style=flat-square" />
+<img alt="Language" src="https://img.shields.io/badge/language-Kage-blue?style=flat-square" />
+<img alt="Framework" src="https://img.shields.io/badge/framework-Ebitengine-e05d44?style=flat-square" />
+<img alt="Editor" src="https://img.shields.io/badge/editor-Zed-00d2ff?style=flat-square" />
+</p>
+Kage(Ebitengine shader 语言)的 [Zed editor](https://zed.dev) 扩展，基于[sedyh/ebitengine-kage-vscode](https://github.com/sedyh/ebitengine-kage-vscode) 移植并增强。
 
-Kage(Ebitengine shader 语言)的 [Zed editor](https://zed.dev) 扩展,基于
-[sedyh/ebitengine-kage-vscode](./ebitengine-kage-vscode) 移植并增强。
+
+
 
 ## 功能
 
@@ -55,7 +62,6 @@ repository = "新的绝对路径/kage-zed/grammar-src"
 rev = "main"
 ```
 
-发布到扩展市场时,把 `grammar-src` 推送到 GitHub 并改用仓库 URL 与 commit。
 
 ## 更新语法
 
